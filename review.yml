@@ -1,0 +1,138 @@
+aid: lantum
+name: Lantum
+review:
+  question: Does Lantum expose a documented public developer API or an HL7 FHIR surface?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+findings:
+  summary: |
+    Lantum (formerly Network Locum) is a UK healthcare workforce-management
+    company — its Connected Scheduling platform provides digital staff banks,
+    rota / e-rostering, automated timesheets and payments, and a verified
+    locum-clinician network to NHS primary- and secondary-care organisations.
+    As of the review date Lantum does NOT publish a public developer portal,
+    a documented REST API, downloadable OpenAPI/Swagger specifications, or an
+    HL7 FHIR CapabilityStatement. The product is delivered through a gated
+    AngularJS single-page web application at lantum.com plus native mobile
+    apps, entered via login and onboarded through a sales / demo-request flow.
+    No self-serve public API surface, sandbox, or SMART-on-FHIR authorization
+    server was discovered.
+  developerPortal:
+    probed:
+      - url: https://developer.lantum.com/
+        status: 000
+        note: Host does not resolve.
+      - url: https://docs.lantum.com/
+        status: 000
+        note: Host does not resolve.
+      - url: https://api.lantum.com/
+        status: 000
+        note: Host does not resolve.
+      - url: https://fhir.lantum.com/
+        status: 000
+        note: Host does not resolve.
+      - url: https://lantum.com/developers
+        status: 200
+        note: Not a portal. Returns the AngularJS SPA shell (ng-app), rendering only a staging/impersonation status placeholder. No API content.
+      - url: https://lantum.com/api
+        status: 200
+        note: Not a portal. Returns the same SPA shell; no API documentation, reference, or endpoints.
+    confirmed: false
+    confirmedURL: ""
+  fhirCapabilityStatement:
+    present: false
+    fhirVersion: null
+    resources: []
+    probed:
+      - url: https://lantum.com/.well-known/smart-configuration
+        status: 403
+      - url: https://lantum.com/.well-known/openid-configuration
+        status: 403
+    note: No FHIR base or metadata endpoint is published; UK Core / FHIR is not part of Lantum's public surface.
+  downloadableSpecs:
+    count: 0
+    provenance: |
+      Probed https://lantum.com/openapi.json and https://lantum.com/swagger.json —
+      both return HTTP 200 but with content-type text/html: the AngularJS SPA
+      catch-all shell, NOT a parseable OpenAPI/Swagger document (no openapi/swagger
+      key, no paths). A nonsense path (e.g. /this-page-does-not-exist-xyz123) also
+      returns 200, confirming the server serves the SPA shell for every route, so a
+      200 does not indicate a real resource. https://api.lantum.com/openapi.json does
+      not resolve. No specifications were harvested.
+  authModel:
+    scheme: application-login
+    note: |
+      Access is via a gated web/mobile application login (https://lantum.com/login).
+      No public OAuth2 client-credentials, API key, SMART-on-FHIR authorization-code
+      flow, or mTLS API authentication is documented. /.well-known/smart-configuration
+      and /.well-known/openid-configuration return 403.
+    smartOnFhir: false
+    scopes: []
+  standardsConformance:
+    usCore: false
+    ukCore: false
+    auCore: false
+    daVinci: false
+    carin: false
+    note: No public FHIR surface, so no FHIR implementation-guide conformance is claimed or discoverable.
+  gatedVsSelfServe: gated
+  marketSeam: |
+    UK healthcare is dominated by the NHS. NHS England runs the public FHIR UK Core
+    platform (api.service.nhs.uk / digital.nhs.uk) with the EMIS + TPP SystmOne GP
+    clinical-system duopoly beneath it. Lantum sits in the commercial workforce /
+    practice-management layer around that ecosystem, integrating with NHS primary-care
+    organisations operationally rather than by exposing its own public FHIR/REST API.
+  githubOrganization:
+    url: https://github.com/networklocum
+    note: |
+      Public org "networklocum" holds ~17 repositories, all internal engineering
+      tooling (django-rest-swagger fork, prometheus middleware, terraform/atlantis
+      helpers, a frontend take-home task). No customer-facing API spec, SDK, or
+      developer documentation is published there.
+  transports:
+    - protocol: HTTPS Web Application
+      scheme: https
+      baseURL: https://lantum.com
+      documented: true
+      note: Gated AngularJS single-page application; not a documented API.
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public REST API is documented. An internal REST API likely exists (django-rest-swagger tooling) but is not published or self-serve.
+    - protocol: FHIR
+      scheme: https
+      documented: false
+      note: No HL7 FHIR base URL, CapabilityStatement, or metadata endpoint is published.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented.
+sources:
+  - url: https://www.lantum.com/
+    type: Website
+    note: Company marketing site (AngularJS SPA); describes Connected Scheduling workforce platform for NHS.
+  - url: https://www.lantum.com/primary-care
+    type: Website
+    note: Primary-care product page — staff bank, rota, locum network for GP practices.
+  - url: https://blog.lantum.com/
+    type: Blog
+    note: Active company blog on NHS staff banks, rota, and workforce management.
+  - url: https://github.com/networklocum
+    type: GitHubOrganization
+    note: Public org; internal engineering tooling only, no public API artifacts.
+  - url: https://en.wikipedia.org/wiki/Lantum
+    type: Reference
+    note: Founded 2012 (as Network Locum) by Melissa Morris, Shoreditch London; rebranded Lantum 2016; serves NHS GP practices, ICS, trusts.
+actions:
+  apisYmlUpdated: true
+  reason: |
+    No public developer portal, documented API, downloadable specification, or FHIR
+    CapabilityStatement exists. apis.yml therefore captures organisation identity with
+    an empty apis[] list and a common[] block of verified corporate/product links
+    (Website, Blog, GitHub org, LinkedIn, login, demo request). This is an honest
+    identity-only (built-stub) profile of a gated UK workforce-management platform.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
