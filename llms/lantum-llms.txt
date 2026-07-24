@@ -1,0 +1,30 @@
+# Lantum
+
+> Lantum (formerly Network Locum, founded 2012 in Shoreditch, London) is a UK healthcare workforce-management company. Its Connected Scheduling platform helps NHS primary- and secondary-care organisations build digital staff banks, manage rotas and e-rostering, run automated timesheets and payments, and fill clinical shifts from a verified network of 30,000+ locum clinicians, serving 2,000+ primary-care organisations, GP practices, PCNs, GP federations, and integrated care systems across the UK. Lantum is a practice-management and workforce platform, delivered through a gated web and mobile application; it does NOT publish a public developer portal, a documented REST API, downloadable OpenAPI/Swagger specifications, or an HL7 FHIR CapabilityStatement. Integrations (for example to GP clinical systems) are handled through private partner arrangements rather than a self-serve public API.
+
+## Product
+- [Primary Care](https://lantum.com/primary-care): Staff bank, rota, and locum network for GP practices, PCNs, and federations.
+- [Secondary Care](https://lantum.com/secondary-care): Workforce scheduling for NHS trusts and secondary-care organisations.
+- [For Clinicians](https://lantum.com/for-clinicians): Verified locum clinician network, shift discovery, and payments.
+
+## Company
+- [Website](https://www.lantum.com/): Company site describing the Connected Scheduling workforce platform.
+- [Blog](https://blog.lantum.com/): Articles on NHS staff banks, rota management, and workforce strategy.
+- [About Us](https://lantum.com/about-us): Company background and team.
+- [GitHub Organization](https://github.com/networklocum): Public org "networklocum" — internal engineering tooling only, no customer-facing API artifacts.
+- [LinkedIn](https://uk.linkedin.com/company/lantum): Company profile.
+
+## Access
+- [Book a Demo](https://lantum.com/book-a-demo): Sales / demo-request onboarding (enterprise, gated).
+- [Login](https://lantum.com/login): Gated web/mobile application login.
+- [Support / Help Center](https://support.lantum.com/hc/en-us): Zendesk help center.
+
+## Legal
+- [Terms & Conditions](https://lantum.com/ts-and-cs)
+- [Privacy Policy](https://lantum.com/privacy-policy)
+- [Cookies Policy](https://lantum.com/cookies-policy)
+
+## Notes for agents
+- No public API: there is no documented REST/GraphQL/FHIR surface, no OpenAPI/Swagger, no sandbox, and no OAuth/SMART-on-FHIR authorization server. `/.well-known/*` endpoints return HTTP 403 (WAF-blocked, none published).
+- The lantum.com host serves an AngularJS single-page-application shell (HTTP 200) for every route, including nonsense paths, so a 200 status does not indicate a real API resource.
+- Access is via a gated application login; any system integrations are arranged privately with Lantum, not self-serve.

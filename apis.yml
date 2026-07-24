@@ -43,9 +43,14 @@ tags:
 - Locum
 created: '2026-07-24'
 modified: '2026-07-24'
+enrichmentRound: '2026-07-24'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/lantum-domain-security.yml
+- type: LLMsTxt
+  url: llms/lantum-llms.txt
 - type: Website
   url: https://www.lantum.com/
 - type: Blog
@@ -57,7 +62,13 @@ common:
 - type: SignUp
   url: https://lantum.com/login
 - type: Support
-  url: https://info.lantum.com/lantum-demo
+  url: https://support.lantum.com/hc/en-us
+- type: HelpCenter
+  url: https://support.lantum.com/hc/en-us
+- type: TermsOfService
+  url: https://lantum.com/ts-and-cs
+- type: PrivacyPolicy
+  url: https://lantum.com/privacy-policy
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
