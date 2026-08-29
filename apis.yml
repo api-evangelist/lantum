@@ -16,6 +16,17 @@ description: >-
   onboarded via sales and demo request, with any system integrations (for example to
   GP clinical systems) handled through private partner arrangements rather than a
   self-serve public API.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: gated
