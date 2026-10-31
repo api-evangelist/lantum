@@ -1,4 +1,4 @@
-# Lantum (lantum)
+# Lantum
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,52 +64,85 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Lantum (formerly Network Locum, founded 2012 in Shoreditch, London) is a United Kingdom healthcare workforce-management company. Its Connected Scheduling platform helps NHS primary- and secondary-care organisations build digital staff banks, manage rotas and e-rostering, run automated timesheets and payments, and fill clinical shifts from a verified network of 30,000+ locum clinicians. It serves over 2,000 primary-care organisations, GP practices, PCNs, GP federations, and integrated care systems across the UK.
+Lantum (formerly Network Locum, founded 2012 in Shoreditch, London) is a United Kingdom healthcare workforce-management company whose Connected Scheduling platform helps NHS primary- and secondary-care organisations build digital staff banks, manage rotas and e-rostering, run automated timesheets and payments, and fill clinical shifts from a verified network of 30,000+ locum clinicians. It serves over 2,000 primary-care organisations, GP practices, PCNs, GP federations, and integrated care systems across the UK. Lantum is a practice-management and workforce platform rather than a clinical-data interoperability vendor, and it does NOT publish a public developer portal, a documented REST API, or an HL7 FHIR CapabilityStatement. Its product is delivered through a gated web and mobile application (lantum.com), onboarded via sales and demo request, with any system integrations (for example to GP clinical systems) handled through private partner arrangements rather than a self-serve public API.
 
-Lantum is a practice-management / workforce platform rather than a clinical-data interoperability vendor. As of the review date it does **not** publish a public developer portal, a documented REST API, downloadable OpenAPI/Swagger specifications, or an HL7 FHIR CapabilityStatement. The product is delivered through a gated web and mobile application (lantum.com), onboarded via sales and demo request.
+**Areas:** Healthcare · United Kingdom · Workforce Management · NHS · National Health System · Staff Bank · Rota Scheduling · Primary Care · Practice Management · Healthcare Staffing · Locum
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/lantum/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/lantum/refs/heads/main/apis.yml)
+## Lantum on APIs.io
 
-## Home Market
+Everything profiled for Lantum is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lantum/](https://apis.io/providers/lantum/)** — or go straight to one of the APIs or properties below.
 
-United Kingdom (NHS)
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Healthcare
-- United Kingdom
-- Workforce Management
-- NHS
-- National Health System
-- Staff Bank
-- Rota Scheduling
-- Primary Care
-- Practice Management
-- Healthcare Staffing
-- Locum
+#### Security (1)
 
-## Timestamps
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Created:** 2026-07-24
-- **Modified:** 2026-07-24
+- [Lantum Domain Security](https://apis.io/security/lantum/lantum-domain-security/)
 
-## APIs
+## Where to find this API
 
-No public, documented API is published by Lantum. The platform is a gated web/mobile
-application entered via login and onboarded through a sales / demo-request flow. No
-developer portal, OpenAPI/Swagger specification, or HL7 FHIR CapabilityStatement was
-discoverable (see `review.yml` for the full probe log and HTTP statuses).
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.lantum.com/)
+- [Sign up](https://lantum.com/login)
+- [Support](https://support.lantum.com/hc/en-us)
 - [Blog](https://blog.lantum.com/)
-- [GitHub Organization](https://github.com/networklocum)
-- [LinkedIn](https://uk.linkedin.com/company/lantum)
-- [Sign Up / Login](https://lantum.com/login)
-- [Support / Demo Request](https://info.lantum.com/lantum-demo)
+- [Terms of service](https://lantum.com/ts-and-cs)
+- [Privacy policy](https://lantum.com/privacy-policy)
+- [GitHub](https://github.com/networklocum)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 8.8** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 10.5 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 7.8** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lantum/](https://apis.io/providers/lantum/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lantum: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lantum/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
